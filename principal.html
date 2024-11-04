@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISMAAI - Monitoreo Inteligente</title>
+    <!-- Librería de iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+ p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px; /* Ajusta este valor según tus preferencias */
+    line-height: 1.8;
+    color: #333;
+}
+
+        .carousel-control {
+    width: 40px; /* Ancho del botón */
+    height: 40px; /* Alto del botón */
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo del botón */
+    border-radius: 50%; /* Botones redondeados */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: background-color 0.3s;
+}quie
+
+.carousel-control:hover {
+    background-color: rgba(255, 255, 255, 1); /* Cambia el fondo al pasar el mouse */
+}
+
+.carousel-control .glyphicon {
+    font-size: 20px; /* Tamaño del icono */
+    color: #333; /* Color del icono */
+}
+
+.carousel-control.left {
+    left: 10px; /* Posición del botón izquierdo */
+}
+
+.carousel-control.right {
+    right: 10px; /* Posición del botón derecho */
+}
+
+        .carousel-inner > .item > img {
+    width: 100%; /* Ancho completo */
+    height: 500px; /* Ajusta la altura según lo necesites */
+    object-fit: cover; /* Corta la imagen para llenar el espacio */
+        }
+        * {
+            .carousel-inner > .item > img {
+        width: 100%;
+        height: 600px; /* Ajusta la altura según lo necesites */
+        object-fit: cover; /* Mantiene la relación de aspecto */
+    }
+    .carousel {
+        margin: 20px 0; /* Separación superior e inferior */
+    }
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #eef2f7;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #3b3b3b;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            color: #f4f4f9;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        header img {
+            height: 50px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: #f4f4f9;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #565656;
+        }
+        .hero {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+            background: url('assets/imgs/equipo.jpeg') no-repeat center center/cover;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.7); /* Filtro oscuro */
+        }
+        .hero h2 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+        .hero a {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 14px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+        }
+        .hero a:hover {
+            background-color: #e04a4a;
+        }
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+            border-radius: 10px;
+        }
+        .section h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #333;
+        }
+        .section p {
+            font-size: 22px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #666;
+        }
+        .section-icons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+        .section-icons div {
+            text-align: center;
+            width: 150px;
+        }
+        .section-icons i {
+            font-size: 40px;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+     
+        }
+        .footer {
+            background-color: #3b3b3b;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .topographic-info {
+            background-color: #f4f4f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+        .topographic-info h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 24px;
+            text-align: left;
+        }
+        .topographic-info p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .topographic-info ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .topographic-info ul li {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        #map-container {
+            margin-top: 10px;
+            padding: 10px;
+            background: #eaeaea;
+            text-align: center;
+            border-radius: 5px;
+
+        }
+        #map-container p {
+            color: #888;
+        }
+
+        /* Estilo del Carrusel */
+        .carousel-inner > .item > img,
+        .carousel-inner > .item > a > img {
+            width: 30%;
+            margin: auto;
+        }=
+        .carousel {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .section-icons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+       
+    </style>
+</head>
+<body>
+
+    <!-- Header / Barra de Navegación -->
+    <header>
+        <img src="assets/imgs/flade_blanco.png" alt="Logo SISMAAI">
+        <nav>
+            <ul>
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="login.php">Iniciar Sesión</a></li>
+                <li><a href="register.php">Registrarse</a></li>
+                <li><a href="administracion.php">Monitoreo Avanzado</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Hero -->
+    <div class="hero">
+        <h2>SISTEMA DE MONITOREO DE AFLUENTES Y ALERTA DE INUNDACIONES (SISMAAI)</h2>
+        <p>Proteger a las comunidades vulnerables con tecnología avanzada.</p>
+        <a href="#mision">Saber más</a>
+    </div>
+
+    <!-- Sección Misión, Visión y Valores -->
+    <section class="section" id="mision">
+        <b><h1>Quiénes Somos</h1></b>
+       <p style: text-align:justify; > Misión: "Proteger a las comunidades vulnerables a través de un sistema de monitoreo y alerta de inundaciones en tiempo real."</p>
+               <p style: text-align:justify; >Visión: "Ser referentes en soluciones tecnológicas para la prevención de desastres en la región."</p>
+        <div class="section-icons">
+            <div>
+                <i class="fas fa-lightbulb"></i>
+                <p>Innovación</p>
+            </div>
+            <div>
+                <i class="fas fa-hand-holding-heart"></i>
+                <p>Compromiso Social</p>
+            </div>
+            <div>
+                <i class="fas fa-leaf"></i>
+                <p>Sostenibilidad</p>
+            </div>
+            <div>
+                <i class="fas fa-eye"></i>
+                <p>Transparencia</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrusel de Imágenes -->
+   <!-- Carrusel de Imágenes -->
+        <!-- Carrusel de Imágenes -->
+<!-- Carrusel de Imágenes en Fila -->
+<!-- Carrusel de Imágenes en Fila -->
+<div class="container">
+    <br>
+    <div id="theCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Contenedor de las imágenes -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="carousel-images">
+                    <img src="assets/imgs/inundacion1.jpg" alt="Imagen 1">
+                    <img src="assets/imgs/inundacion2.jpg" alt="Imagen 2">
+                    <img src="assets/imgs/inundacion3.jpg" alt="Imagen 3">
+                    <img src="assets/imgs/inundacion4.jpg" alt="Imagen 4">
+                    <img src="assets/imgs/inundacion5.jpg" alt="Imagen 5">
+                    <img src="assets/imgs/inundacion6.jpg" alt="Imagen 6">
+                    <img src="assets/imgs/inundacion7.jpg" alt="Imagen 7">
+                </div>
+            </div>
+        </div>
+        <!-- Botones de control -->
+       
+    </div>
+     <button id="prevBtn" class="btn btn-primary">Anterior</button>
+        <button id="nextBtn" class="btn btn-primary">Siguiente</button>
+</div>
+
+<!-- Script para controlar el carrusel -->
+<script>
+    // Botón de Anterior
+    document.getElementById('prevBtn').addEventListener('click', function() {
+        $('#theCarousel').carousel('prev');
+    });
+
+    // Botón de Siguiente
+    document.getElementById('nextBtn').addEventListener('click', function() {
+        $('#theCarousel').carousel('next');
+    });
+</script>
+
+<style>
+   .carousel-inner {
+    display: flex; /* Hace que el contenedor sea flexible */
+    overflow: hidden; /* Oculta el desbordamiento */
+}
+
+.carousel-images {
+    display: flex; /* Alínea las imágenes en fila */
+    transition: transform 0.5s ease; /* Suaviza la transición al deslizar */
+}
+
+.carousel-images img {
+    width: 300px; /* Ajusta el ancho de cada imagen según sea necesario */
+    height: auto; /* Mantiene la relación de aspecto */
+    margin-right: 10px; /* Espaciado entre las imágenes */
+}
+
+/* Ajustar la altura del carrusel */
+.carousel {
+    height: 400px; /* Ajusta la altura total del carrusel */
+}
+
+/* Estilo de los botones */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para los controles */
+    color: white;
+    text-align: center;
+    width: 30px; /* Ancho de los botones */
+    height: 30px; /* Altura de los botones */
+    line-height: 30px; /* Centra el icono verticalmente */
+    border-radius: 50%; /* Hace los botones circulares */
+}
+
+
+</style>
+ <script>
+    $(document).ready(function() {
+        var currentIndex = 0;
+        var items = $('.carousel-images img');
+        var itemCount = items.length;
+        var itemWidth = items.outerWidth(true); // Obtener el ancho total de cada imagen (incluyendo márgenes)
+
+        // Función para mostrar la siguiente imagen
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % itemCount;
+            updateCarousel();
+        }
+
+        // Función para mostrar la imagen anterior
+        function showPrevImage() {
+            currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+            updateCarousel();
+        }
+
+        // Actualiza la posición del carrusel
+        function updateCarousel() {
+            var offset = -currentIndex * itemWidth;
+            $('.carousel-images').css('transform', 'translateX(' + offset + 'px)');
+        }
+
+        // Configura los eventos para los controles
+        $('#prevBtn').click(showPrevImage);
+        $('#nextBtn').click(showNextImage);
+    });
+</script>
+  
+
+    <div class="topographic-info">
+        <h2>Datos Topográficos de Álamo Temapache</h2>
+        <p>Álamo Temapache se encuentra a una altitud promedio de 23 metros sobre el nivel del mar. Esta ubicación en la cuenca del río Pánuco presenta características que deben considerarse en el monitoreo de inundaciones:</p>
+        <ul>
+            <li>Relieve: Generalmente plano con algunas áreas elevadas.</li>
+            <li>Clima: Templado, con temporadas de lluvias significativas.</li>
+            <li>Flora: Vegetación variada, incluyendo zonas agrícolas.</li>
+        </ul>
+        <div id="map-container">
+            <p>Ubicación de Álamo Temapache:</p>
+            <iframe src="https://maps.google.com/maps?q=Álamo%20Temapache&t=&z=13&ie=UTF8&iwloc=&output=embed" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 SISMAAI. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

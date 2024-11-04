@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <link rel="stylesheet" href="estilo2.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALBERGUES - SISMAAI</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 19px;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1b2a;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #e0e1dd;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: flex-start;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .boton1 {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #1b263b;
+            color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.2s;
+            margin-bottom: 20px;
+        }
+
+        .boton1:hover {
+            background-color: #415a77;
+            transform: scale(1.05);
+        }
+
+        #map {
+            height: 60vh;
+            width: 100%;
+            max-width: 400px;
+            margin: 10px;
+            border: 2px solid #333;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #albergues {
+            max-width: 600px;
+            width: 100%;
+            margin: 10px;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 20px;
+            background-color: #1b263b;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #albergues h2 {
+            color: #e0e1dd;
+            margin-bottom: 15px;
+        }
+
+        #albergues p {
+            color: #c9d6df;
+            margin-bottom: 20px;
+        }
+
+        #select-location {
+            width: 80%;
+            height: 40px;
+            border-radius: 20px;
+            padding: 5px;
+            border: none;
+            margin-bottom: 20px;
+            background-color: #415a77;
+            color: #ffffff;
+            text-align: center;
+            font-size: 1.2rem;
+            outline: none;
+        }
+
+        #albergue-info {
+            color: #c9d6df;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            #map {
+                height: 50vh;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <br><br>       <sbr><br>
+    <br><br>
+ <br><br>
+    <sbr><br>
+    <sbr><br>
+
+    <h1 style="color:black;">ALBERGUES EN ALAMO TEMAPACHE VERACRUZ</h1>
+    <div id="container">
+        <a href="index.php" class="boton1">Volver a inicio</a>
+        <div id="albergues">
+            <h2>Albergues con permisos y apoyo de SISMAAI</h2>
+            <p>
+                En caso de alerta preventiva, es crucial conocer la ubicación de los albergues cercanos, lugares preparados para brindar refugio y apoyo en emergencias. Mantente informado y seguro.
+            </p>
+            <select name="select-location" id="select-location">
+                <option value="20.8977906, -97.6823204">Albergue 1</option>
+                <option value="20.9021882, -97.6642624">Albergue 2</option>
+            </select>
+            <div id="albergue-info"></div>
+        </div>
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script>
+        const alberguesInfo = {
+            'Albergue 1': 'Ubicado en el ejido Pueblo Nuevo, específicamente en la Escuela Enrique C. Rebsamen. Este centro brinda apoyo a aquellas personas que enfrentan dificultades para encontrar refugio durante períodos de inundación.',
+            'Albergue 2': 'Ubicado en la colonia Jose López Portillo, llevando nombres de Jorge vera expresidente y Ricardo Serna',
+        };
+
+        let map = L.map('map').setView([20.913806, -97.676117], 18);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        document.getElementById('select-location').addEventListener('change', function (e) {
+            let coords = e.target.value.split(",");
+            map.flyTo(coords, 18);
+            let selectedOption = e.target.selectedOptions[0].text;
+            document.getElementById('albergue-info').innerText = `Información de ${selectedOption}: ${alberguesInfo[selectedOption]}`;
+        });
+    </script>
+
+</body>
+
+</html>

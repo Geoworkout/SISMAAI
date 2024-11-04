@@ -1,0 +1,296 @@
+ /* Estilos para h4 en modo claro */
+ body{
+    background-color: #F6FAFF !important;
+}
+footer p{
+    background-color: #F6FAFF !important;
+}
+#scrollspy {
+    background-color: #F6FAFF;
+}
+body h4 {
+font-family: "Raleway", sans-serif;
+}
+/* Agrega más estilos personalizados según sea necesario */
+/* Estilos para el modo oscuro */
+body.dark-mode {
+background-color: #151E21 !important;
+color: white !important;
+font-family: "Raleway", sans-serif;
+}
+body.dark-mode #scrollspy {
+background-color: #151E21 !important;
+color: white !important;
+font-family: "Raleway", sans-serif;
+
+}
+body.dark-mode .navbar-brand {
+    color: white;
+}
+/* Estilos para la tabla en modo oscuro */
+
+body.dark-mode .table {
+    background-color: #151E21 !important;
+color: white !important;
+font-family: "Raleway", sans-serif;
+    }
+#contenido{
+width: 40%; /* Haz que los gráficos ocupen el 40% del ancho disponible */
+height: auto; /* Mantén la proporción del gráfico */
+margin-left: auto; /* Ajusta el valor según la cantidad de desplazamiento que desees */ 
+margin-right: auto; /* Centra el gráfico horizontalmente */
+/* Ajusta otros estilos según tus necesidades */   
+}
+.slider {
+position: absolute;
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider + label {
+position: relative;
+cursor: pointer;
+padding: 2px;
+}
+/* Estilo del slider deslizante */
+.slider + label::before {
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+top: 0;
+background-color: #ccc;
+border-radius: 15px;
+transition: 0.4s;
+}
+/* Estilo del pulgar del slider */
+.slider + label::after {
+content: "";
+position: absolute;
+width: 15px;
+height: 20px;
+left: 5px;
+bottom: 1px;
+background-color: #fff;
+border-radius: 50%;
+transition: 0.4s;
+}
+/* Cambiar el fondo del slider cuando está activado */
+.slider:checked + label::before {
+background-color: #2196F3;
+}
+/* Mover el pulgar del slider cuando está activado */
+.slider:checked + label::after {
+transform: translateX(80px);
+}
+/* Estilo del texto de etiqueta */
+#darkModeLabel {
+position: relative;
+margin-left: 20px; /* Espacio para el botón deslizante */
+display: inline-block;
+line-height: 10px; /* Alinea el texto verticalmente con el slider */
+}
+/* Estilo para la sección "about" */
+#about {
+background-color: #fff; /* Cambia el color de fondo a blanco o el que desees */
+padding: 20px; /* Ajusta el espacio interno según tus necesidades */
+width: 85550px; /* Asegura que la gráfica ocupe todo el ancho de la sección */
+}
+/* Estilo para el contenedor de la gráfica */
+#chart {
+width: 90%; /* Asegura que la gráfica ocupe todo el ancho de la sección */
+height: 400px; /* Establece la altura de la gráfica según tus preferencias */
+margin: 0 auto; /* Centra horizontalmente la gráfica */
+}
+.chart{
+width: 100%;
+min-height: 400px;
+}
+/* Estilo para el título de la gráfica */
+#chart h4 {
+text-align: center; /* Centra el texto horizontalmente */
+color: #232a38; /* Cambia el color del texto según tus preferencias */
+font-size: 24px; /* Ajusta el tamaño de fuente según tus preferencias */
+}
+
+/* Estilos para las líneas de la tabla en modo claro */
+body.th{
+    border: 1px solid rgb(0, 0, 0);
+    color:rgb(0, 0, 0);
+    }
+body.dark-mode th{
+border: 1px solid white;
+color:black;
+}
+body.dark-mode td {
+border: 1px solid white;
+}    
+#table {
+width: 40%;
+text-align:center;
+/* con     border-collapse: collapse; quitamos La separación entre celdas de la tabla 
+para que no se vean separadas las celdas
+*/
+border-collapse: collapse;
+}
+th,td {
+border: 1px solid rgb(2, 2, 2);
+
+}
+th{
+background-color: #02aeae;
+color: rgb(255, 255, 255);
+}
+/* ala tabla le podemos añadir colores a diferentes filas como en word de forma par e impar */
+/* hacemos lo siguiente */
+
+tr:hover{
+/* recuerdas que en los links podiamos usar el "elemento:hover" para cuando pasaba el mouse? 
+pues tambien se puede aplicar alos renglones "tr" de la tabla*/
+background-color:#b6b3e0;
+/* ahora al pasar el moue por cada fila este se pondra morado
+ahora con cursor pointer se activa la manita para seleccionar */
+cursor: pointer;
+}
+#exportButton {
+background-color: #008CBA;
+border: none;
+color: white;
+padding: 5px 10px;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 5px;
+cursor: pointer;
+border-radius: 5px;
+}
+/* Estilos para el botón de exportación al pasar el mouse */
+#exportButton:hover {
+background-color: #005F80;
+}
+
+body.dark-mode footer p{
+background-color: #151E21 !important;
+color: white !important;
+font-family: "Raleway", sans-serif;
+}  
+.tabla {
+  margin-top: 40px; /* Agrega margen en la parte superior */
+  width: 60%;
+  margin-left: 130px !important;
+    
+}
+.container2{
+    width:100% !important;}
+.humedad{
+    
+    margin-left: 550px; 
+    width: 70% !important; 
+}
+.container2{
+width: 100%;
+}
+#containerPrincipal {
+  width: 100%; /* Puedes ajustar el ancho según tus necesidades */
+  max-width: 1500px; /* Un ancho máximo para evitar que se extienda demasiado */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  box-sizing: border-box; /* Incluye el relleno en el ancho total */
+  overflow: hidden; /* Oculta cualquier desbordamiento de contenido */
+  /* height: 120%; */ /* Elimina o cambia la altura según tus necesidades */
+}
+#titulo2{
+    font-size: 30px;
+    margin-bottom: 120px; /* Agrega un margen superior para separar del div */
+    max-height: 40px;
+  }
+  #tablaAgua{
+        font-size:12px;
+         width: 80% !important;
+        border: 2px solid black; /* Borde negro de 2px */
+        height:200px;
+        margin-left:60px; /* Agrega un margen superior para separar del div */
+}
+@media (max-width: 768px) {
+    .tabla{
+        width: 80%;
+        margin: 0; /* Asegúrate de que no haya márgenes que afecten el ancho */
+        margin-left: 10px !important;
+        text-align: center;
+        padding: 0; /* Asegúrate de que no haya rellenos que afecten el ancho */
+        border: 0; /* Asegúrate de que no haya bordes que afecten el ancho */
+        box-sizing: border-box; /* Esto asegurará que el ancho incluya el relleno y el borde, si los hubiera */
+    }
+    #table{
+    font-size:12px;
+         width: 90% !important;
+          margin-left: 40px !important;
+    }
+    .humedad{
+        height: 280px;
+         width: 100% !important;
+        margin-top:  300px !important; 
+          margin-left: 40px !important;
+          max-width: 1400px;
+    }
+    #map{
+          height: 350px !important; 
+        width: 300px !important;
+        display: flex;
+         justify-content: center; /* Centra horizontalmente el contenido */
+         align-items: center; /* Centra verticalmente el contenido (opcional) */
+    }
+    .footer p{
+        width: 370px !important;
+}
+#lluv{
+        height: 400px!important; 
+        margin-left:  20px !important; 
+        width: 300px !important;
+        
+}
+.containerLLuvia{
+       height: 800px;
+        margin-left:  0 !important; 
+        width: 100% !important;
+        margin-left: 25px !important;
+         position: relative !important;
+        top: 20px!important;
+}
+#tablaAgua{
+        font-size:12px;
+         width: 300px !important;
+        border: 2px solid black; /* Borde negro de 2px */
+         top: 80px!important;
+          margin-left: 20px !important;
+        height:200px;
+}
+#tablaAgua th{
+        font-size:12px !important;
+            font-weight: bold;
+            
+}
+
+#select-location{
+    margin-left: 40px !important;
+}
+#containerPrincipal {
+max-width: 1500px; /* Un ancho máximo para evitar que se extienda demasiado */
+
+}
+.foot{
+    height:400px !important;
+      position: relative !important;
+        top:320px!important;
+}
+}
+.notificacion {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 5px;
+    display: none;
+}

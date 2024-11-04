@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Registrado - SISMAAI</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #0d1b2a;
+            font-family: 'Arial', sans-serif;
+            color: #e0e1dd;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: #1b263b;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .container h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .container .register-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #415a77;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .container .register-btn:hover {
+            background-color: #778da9;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Acceso Restringido</h1>
+        <p>Usted no está registrado por el administrador. Por favor, envíe sus datos registrándose en el siguiente enlace:</p>
+        <a href="register.php" class="register-btn">Registrarse</a>
+                <p>Si ya se registro espere a que el administrador lo autorice</p>
+
+    </div>
+</body>
+
+</html>
